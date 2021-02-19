@@ -28,6 +28,6 @@ public class TC001 extends BaseTest {
 	@AfterMethod
 	public void deleleCustomer() {
 		TasksPage tasksPage = (TasksPage) homePage.clickOnMenuLink("Tasks");
-		tasksPage.deleteCustomer(customerName);
+		tasksPage.deleteCustomer("Ravindu Toyota");
 	}
 }

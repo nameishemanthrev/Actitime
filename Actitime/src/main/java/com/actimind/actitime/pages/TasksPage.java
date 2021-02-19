@@ -26,6 +26,27 @@ public class TasksPage extends BasePage {
 	@FindBy(xpath="//span[text()='Delete permanently']")
 	private WebElement deletePermanentlyButton;
 	
+	
+	@FindBy(xpath="//div[@class='unfilteredContainer']//div[@class='iScrollIndicator']")
+	private WebElement scroller;
+	
+	public void scrollToCustomer(String customerName) {
+		int scrollPosition = 0;
+		int newScrollPosition = 1;
+		outerFor:
+		for(;scrollPosition!=newScrollPosition;) {
+			scrollPosition = scroller.getLocation().getY()+scroller.getSize().getHeight();
+			for(WebElement ele:customerNamesList) {
+				if(ele.getText().contains(customerName)) {
+					break outerFor;
+				}
+			}
+			webActionUtil.scrollElementDown(scroller, 50);
+			newScrollPosition = scroller.getLocation().getY()+scroller.getSize().getHeight();
+		}
+		
+	}
+	
 	public TasksPage(WebDriver driver, WebActionUtil webActionUtil) {
 		super(driver,webActionUtil);
 	}
@@ -44,6 +65,7 @@ public class TasksPage extends BasePage {
 	}
 	
 	public void deleteCustomer(String customerName) {
+		scrollToCustomer(customerName);
 		mouseHoverAndClickOnCustSettingsIcon(customerName);
 		Utility.sleepInSeconds(5);
 		webActionUtil.elementJSClick(actionsButton);

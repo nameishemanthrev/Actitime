@@ -83,12 +83,12 @@ public class TimeTrackPage extends BasePage {
 	
 	public boolean isTaskDisplayed(String taskName) {
 		Utility.sleepInSeconds(10);
-			for(WebElement ele:desiredTasksList) {
-				if(ele.getText().equalsIgnoreCase(taskName)) {
-					return true;
-				}
+		for(WebElement ele:desiredTasksList) {
+			if(ele.getText().equalsIgnoreCase(taskName)) {
+				return true;
 			}
-			return false;
+		}
+		return false;
 	}
 	
 }

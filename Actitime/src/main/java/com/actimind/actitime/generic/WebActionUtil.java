@@ -97,5 +97,9 @@ public class WebActionUtil {
 		wait.until(ExpectedConditions.urlContains(expectedUrl));		
 	}
 	
+	public void scrollElementDown(WebElement target, int pixels) {
+		actions.dragAndDropBy(target, 0, pixels).perform();
+	}
+	
 	
 }
