@@ -10,6 +10,7 @@
     <classes>
       <class name="com.actimind.actitime.testcases.TC001"/>
      <!--  <class name="com.actimind.actitime.testcases.TC002"/> -->
+      <!--  <class name="com.actimind.actitime.testcases.TC002"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
