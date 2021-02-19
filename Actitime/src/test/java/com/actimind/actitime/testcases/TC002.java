@@ -19,8 +19,9 @@ public class TC002 extends BaseTest {
 		String taskName = ExcelLibrary.getStringData(XL_PATH, "TC001", 1, 3);
 		int estimateHours = (int)(double)ExcelLibrary.getNumericData(XL_PATH, "TC001", 1, 4);
 		int deadlineDay = (int)(double)ExcelLibrary.getNumericData(XL_PATH, "TC001", 1, 5);
+		String menuName1 = ExcelLibrary.getStringData(XL_PATH, "TC001", 1, 6);
 		
-		TimeTrackPage timeTrackPage = (TimeTrackPage) homePage.clickOnMenuLink("Time-Track");
+		TimeTrackPage timeTrackPage = (TimeTrackPage) homePage.clickOnMenuLink(menuName1);
 		timeTrackPage.addNewTask(option, customerName, projectName, taskName, estimateHours, deadlineDay);
 		Assert.assertEquals(timeTrackPage.isTaskDisplayed("NASA Negotiations1"), true);
 	}
