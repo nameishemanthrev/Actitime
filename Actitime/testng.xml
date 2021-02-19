@@ -3,13 +3,14 @@
 <suite name="RegressionSuite">
 
   <test thread-count="5" name="chromeTest">
-  	<parameter name="browserName" value="chrome"></parameter>
+  	<parameter name="browserName" value="firefox"></parameter>
   	<parameter name="implicit" value="30"></parameter>
   	<parameter name="explicit" value="30"></parameter>
   	<parameter name="appUrl" value="https://demo.actitime.com/reports/reports.do"></parameter>
     <classes>
-      <!-- <class name="com.actimind.actitime.testcases.TC001"/> -->
-      <class name="com.actimind.actitime.testcases.TC002"/>
+      <class name="com.actimind.actitime.testcases.TC001"/>
+     <!--  <class name="com.actimind.actitime.testcases.TC002"/> -->
+      <!--  <class name="com.actimind.actitime.testcases.TC002"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
