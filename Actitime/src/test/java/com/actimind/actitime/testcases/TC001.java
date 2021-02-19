@@ -13,7 +13,7 @@ public class TC001 extends BaseTest {
 	@Test
 	public void testCreateTask() {
 		
-		String option = ExcelLibrary.getStringData(XL_PATH, "TC001", 1, 0);
+		String option = ExcelLibrary.getStringData(XL_PATH, "TC001", 1, 9);
 		customerName = ExcelLibrary.getStringData(XL_PATH, "TC001", 1, 1);
 		String projectName = ExcelLibrary.getStringData(XL_PATH, "TC001", 1, 2);
 		String taskName = ExcelLibrary.getStringData(XL_PATH, "TC001", 1, 3);
@@ -22,7 +22,7 @@ public class TC001 extends BaseTest {
 		
 		TimeTrackPage timeTrackPage = (TimeTrackPage) homePage.clickOnMenuLink("Time-Track");
 		timeTrackPage.addNewTask(option, customerName, projectName, taskName, estimateHours, deadlineDay);
-		Assert.assertEquals(timeTrackPage.isTaskDisplayed("NASA Negotiations1"), true);
+		Assert.assertEquals(timeTrackPage.isTaskDisplayed("NASA Negotiations1"), false);
 	}
 	
 	@AfterMethod
